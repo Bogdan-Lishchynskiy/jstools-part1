@@ -3,20 +3,24 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "./node_modules/.bin/eslint ./"
+    "lint": "./node_modules/.bin/eslint ./",
+    "csslint": "stylelint ./**/*.css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.3.1",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "stylelint": "^9.2.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.11.0"
+    "eslint-plugin-import": "^2.11.0",
+    "stylelint-config-standard": "^18.2.0"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "csslint"
   ]
 }
