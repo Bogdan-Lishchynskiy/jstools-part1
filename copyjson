@@ -48,5 +48,9 @@
     "numeral": "^2.0.6",
     "pump": "^3.0.0",
     "stylelint-config-standard": "^18.2.0"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "csslint"
+  ]
 }
