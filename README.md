@@ -15,7 +15,6 @@
 ***
 ## Begin:
 ### So you can simple clone or dowload this project.
-***
 #### After clone use in yor terminal next command:
 * npm install - to install dependecies
 * gulp prod - to bundle task
