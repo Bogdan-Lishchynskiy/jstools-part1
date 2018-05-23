@@ -13,7 +13,8 @@
 ### Add Gulp prod
 * Add task ‘prod’, which should delete folder ‘prod’ (if exists), create folder ‘prod’, copy index.html, copy compiled css file to ‘prod/css/styles.css’, copy and minify all js code (including libs) to 1 file ‘prod/js/app.js’
 ***
-So you can clone or dowload this project.
+## Begin:
+### So you can simple clone or dowload this project.
 ***
 #### After clone use in yor terminal next command:
 * npm install - to install dependecies
