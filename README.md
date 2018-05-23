@@ -18,8 +18,15 @@
 #### After clone use in yor terminal next command:
 * npm install - to install dependecies
 * gulp prod - to bundle task
-* nmp run dev - after go to http://localhost:3000/
-*** 
-#### Press f12 or inspect and in devtools in console you will see all task
-
-
+* npm run dev - after go to http://localhost:3000/
+##### Press f12 or inspect in devtools in console you will see all task
+##### for run diff task just text in terminal:
+* gulp eslint
+* gulp sass 
+* gulp copy 
+* gulp concat
+* gulp uglify
+* gulp del (also will delete prod folder)
+* gulp live
+***
+### To reset project just type gulp del,and after gulp prod.
