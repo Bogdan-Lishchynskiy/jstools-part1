@@ -5,4 +5,5 @@ So you can clone or dowload this project.
 ***
 After that use in yor terminal
 *** 
-> nmp install
+> `nmp install`
+`выделенные слова`
