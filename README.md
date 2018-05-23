@@ -3,7 +3,7 @@
 ***
 So you can clone or dowload this project.
 ***
-### After that use in yor terminal
+#### After that use in yor terminal:
 *** 
 * npm install - to install dependecies
 * gulp prod - to bundle task
