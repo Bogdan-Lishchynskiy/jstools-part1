@@ -1,5 +1,7 @@
 # jstools-part1(Gulp Practise)
 ## Some simple tasks with gulp(task runner)
+* Create project using npm, gulp.
+* Add jQuery, Lodash, Numeral.js, Moment.js using npm, create any 4 js files with any 2 methods from every library in the list
 ### Add Gulp tasks
 * eslint
 * SASS compile
@@ -8,6 +10,8 @@
 * uglify
 * del
 * livereload (needs plugin for your browser)
+### Add Gulp prod
+* Add task ‘prod’, which should delete folder ‘prod’ (if exists), create folder ‘prod’, copy index.html, copy compiled css file to ‘prod/css/styles.css’, copy and minify all js code (including libs) to 1 file ‘prod/js/app.js’
 ***
 So you can clone or dowload this project.
 ***
