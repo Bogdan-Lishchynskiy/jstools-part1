@@ -1,13 +1,13 @@
 # jstools-part1(Gulp Practise)
 ## Some simple tasks with gulp(task runner)
 Add Gulp tasks
-eslint
-SASS compile
-copy file
-concat
-uglify
-del
-livereload (needs plugin for your browser)
+*eslint
+*SASS compile
+*copy file
+*concat
+*uglify
+*del
+*livereload (needs plugin for your browser)
 ***
 So you can clone or dowload this project.
 ***
