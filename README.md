@@ -7,3 +7,4 @@ After that use in yor terminal
 *** 
 > `nmp install`
 `выделенные слова`
+    dir /fonts
