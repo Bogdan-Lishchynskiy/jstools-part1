@@ -4,7 +4,6 @@
 So you can clone or dowload this project.
 ***
 #### After that use in yor terminal:
-*** 
 * npm install - to install dependecies
 * gulp prod - to bundle task
 * nmp run dev - after go to http://localhost:3000/
