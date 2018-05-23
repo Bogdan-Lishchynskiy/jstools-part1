@@ -1,6 +1,3 @@
-# jstools-part1
-Первый абзац
+# jstools-part1(Gulp Practise)
+Some simple tasks with gulp(task runner)
 ***
-Второй абзац
-
-***Наклонный жирный***
