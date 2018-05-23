@@ -8,18 +8,57 @@ const uglify = require('gulp-uglify');
 const pump = require('pump');
 const watch = require('gulp-watch');
 const copy = require('gulp-copy');
+const gulpif = require('gulp-if');
+const babel = require('gulp-babel');
+
+
+//////////////////////////////TASKS FOR PROD
+gulp.task('buildprepare', () => {
+  gulp.src('*.*', {
+      read: false
+    })
+    
+    .pipe(gulp.dest('./prod'));
+});
+
+gulp.task('buildcopy', () => {
+  gulp.src('index.html')
+    .pipe(gulp.dest('./prod/'));
+});
+
+gulp.task('buildcss', () => {
+  gulp.src('./sass/**/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./prod/css/styles.css'));
+});
+
+gulp.task('buildjs', () => {
+  gulp.src('./scripts/**/*.js')
+
+    .pipe(concat('app.js'))
+    .pipe(babel({
+      presets: ['env']
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest('./prod/js/'));
+});
+//////////////////////////////TASKS FOR PROD
+
+//main task prod
+gulp.task('prod', ['buildprepare', 'buildcopy', 'buildcss', 'buildjs']);
+//
 
 gulp.task('sass', () => {
   gulp.src('./sass/**/*.scss')
-  .pipe(sass())
-  .pipe(gulp.dest('./css'));
+    .pipe(sass())
+    .pipe(gulp.dest('./css'));
 });
 
 gulp.task('eslint', () => {
   gulp.src('./scripts/**/*.js')
-  .pipe(eslint())
-  .pipe(eslint.failAfterError())
-  .pipe(gulp.dest('./js'));
+    .pipe(eslint())
+    .pipe(eslint.failAfterError())
+    .pipe(gulp.dest('./js'));
 });
 
 gulp.task('live', () => {
@@ -34,7 +73,7 @@ gulp.task('del', () => {
     './concat',
     './copies',
     './watchers',
-    './prod',
+    './prod'
   ]);
 });
 
@@ -47,30 +86,20 @@ gulp.task('concat', () => {
 
 gulp.task('uglify', (cb) => {
   pump([
-    gulp.src('./scripts/*.js'),
-    uglify(),
-    gulp.dest('./min/'),
-  ],
-  cb
+      gulp.src('./bundle.js'),
+      uglify(),
+      gulp.dest('./min/'),
+    ],
+    cb
   );
 });
 
 
 gulp.task('watch', () => {
-   watch('./scripts/**/*.js', function () {
-      gulp.src('./scripts/**/*.js')
-          .pipe(gulp.dest('./watchers'));
+  watch('./scripts/**/*.js', function () {
+    gulp.src('./scripts/**/*.js')
+      .pipe(gulp.dest('./watchers'));
   });
 });
 
-gulp.task('copy', () => {
-  gulp.src(['./scripts/index.js', './css/index.css'])
-    .pipe(gulp.dest('./copies/'));
-});
 
-
-gulp.task('prod', () => {
-   gulp.src('./copies/index.js')
-   .pipe(del())
-     .pipe(gulp.dest('./prodf/'));
-});

@@ -1,2 +1,1 @@
-let linter =  $('.linter')[1];
-console.log(linter);
+const div = $( ".div" ).css( "border", "3px solid red" );
